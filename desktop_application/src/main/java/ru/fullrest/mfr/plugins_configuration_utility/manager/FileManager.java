@@ -428,7 +428,7 @@ public class FileManager {
                     backupDirectory = Files.createTempDirectory("pcu_backup_");
                     //make backup
                     for (File file : files) {
-                        Path gameFile = Paths.get(getGamePath(false) + file.getAbsolutePath()
+                        Path gameFile = Paths.get(new File( getGamePath(false)).getParent() + file.getAbsolutePath()
                                                                            .replace(patchTempDirectory.toAbsolutePath()
                                                                                                       .toString(), ""));
                         Path backupFile = Paths.get(backupDirectory + File.separator + file.getAbsolutePath()
@@ -448,7 +448,7 @@ public class FileManager {
 
                     //copy new files
                     for (File file : files) {
-                        Path gameFile = Paths.get(getGamePath(false) + file.getAbsolutePath()
+                        Path gameFile = Paths.get(new File( getGamePath(false)).getParent() + file.getAbsolutePath()
                                                                            .replace(patchTempDirectory.toAbsolutePath()
                                                                                                       .toString(), ""));
                         if (Files.notExists(gameFile.getParent())) {

@@ -143,7 +143,7 @@ public class ProgressController implements AbstractController {
                             latVersion = true;
                             Button ok = new Button("Ок");
                             String text = "Что ж, уважаемые любители Morrowind, вот и наступил новый виток жизни " +
-                                    "проекта M[FR]! \n" + "В связи с многочисленными изменениями, такими как новые " +
+                                    "проекта Morrowind Online! \n" + "В связи с многочисленными изменениями, такими как новые " +
                                     "движки и оптимизация их запуска из одной папки, обновление необходимо скачать " +
                                     "вручную. \n" + "Для обновления с версии 3.1.09 или более ранней, необходимо " +
                                     "скачать свежий инсталятор игры от 03.11.2019!\n" + "Не все идеи были " +
@@ -162,10 +162,12 @@ public class ProgressController implements AbstractController {
                 if (result.isNeedUpdate() && result.getUpdatePlan() != null) {
                     Button ok = new Button("Да");
                     Button cancel = new Button("Нет");
-                    String text = "Доступна новая версия M[FR]\nХотите установить?";
+                    String text = "Доступна новая версия Morrowind Online\nХотите установить?";
                     alertView.getController().createAlert(text, cancel, ok);
                     ok.setOnAction(okEvent -> {
+                        log.error("version: " + result);
                         GameUpdateTask gameUpdateTask = new GameUpdateTask(result);
+                        log.error("start update");
                         headerLabel.setText("Установка обновления");
                         gameUpdateTask.addEventFilter(WorkerStateEvent.WORKER_STATE_SUCCEEDED, successEvent -> {
                             if (propertiesConfiguration.isRefreshSchema()) {
@@ -179,7 +181,7 @@ public class ProgressController implements AbstractController {
                             }
                         });
                         gameUpdateTask.addEventFilter(WorkerStateEvent.WORKER_STATE_FAILED,
-                                failedEvent -> exceptionHandler("Ошибка обновления M[FR]",
+                                failedEvent -> exceptionHandler("Ошибка обновления Morrowind Online",
                                         gameUpdateTask.getException()));
                         new Thread(gameUpdateTask).start();
                         stageManager.getAlertStage().close();
@@ -202,7 +204,7 @@ public class ProgressController implements AbstractController {
             }
         });
         task.addEventHandler(WorkerStateEvent.WORKER_STATE_FAILED, event ->
-                exceptionHandler("Ошибка проверки обновлений для M[FR]", task.getException()));
+                exceptionHandler("Ошибка проверки обновлений для Morrowind Online", task.getException()));
         new Thread(task).start();
     }
 

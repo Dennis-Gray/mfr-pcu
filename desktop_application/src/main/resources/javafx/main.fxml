@@ -26,32 +26,20 @@
                                 <Insets bottom="4.0"/>
                             </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#startLauncher" prefHeight="25.0" prefWidth="126.0"
-                                text="Launcher">
+                        <Button mnemonicParsing="false" onAction="#openVKLink" prefHeight="25.0" prefWidth="126.0"
+                                text="VK">
                             <VBox.margin>
                                 <Insets bottom="4.0"/>
                             </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#startMGE" prefHeight="25.0" prefWidth="126.0"
-                                text="MGE">
+                        <Button mnemonicParsing="false" onAction="#openDiscordLink" prefHeight="25.0" prefWidth="126.0"
+                                text="Discord">
                             <VBox.margin>
                                 <Insets bottom="4.0"/>
                             </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#startMCP" prefHeight="25.0" prefWidth="130.0"
-                                text="MCP">
-                            <VBox.margin>
-                                <Insets bottom="4.0"/>
-                            </VBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#openForum" prefHeight="25.0" prefWidth="284.0"
-                                text="Обсудить на форуме">
-                            <VBox.margin>
-                                <Insets bottom="4.0"/>
-                            </VBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#openReadme" prefHeight="25.0" prefWidth="284.0"
-                                text="Readme">
+                        <Button mnemonicParsing="false" onAction="#openReadme" prefHeight="25.0" prefWidth="130.0"
+                                text="ReadMe">
                             <VBox.margin>
                                 <Insets bottom="4.0"/>
                             </VBox.margin>
@@ -85,7 +73,7 @@
                 <HBox alignment="CENTER" prefHeight="46.0" prefWidth="700.0">
                     <children>
                         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                                onAction="#openConfiguration" styleClass="long" text="Настроить M[FR]">
+                                onAction="#startLauncher" styleClass="long" text="Настройки">
                             <padding>
                                 <Insets bottom="1.0"/>
                             </padding>

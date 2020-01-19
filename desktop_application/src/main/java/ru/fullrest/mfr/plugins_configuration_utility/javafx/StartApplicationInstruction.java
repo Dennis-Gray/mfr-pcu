@@ -43,9 +43,9 @@ public class StartApplicationInstruction {
         checkVersion();
         stageManager.setApplicationStage(primaryStage);
         stageManager.getApplicationStage().show();
-        checkUpdateDB();
-        checkExtendedMod(args);
-        checkFirstStart();
+//        checkUpdateDB();
+//        checkExtendedMod(args);
+//        checkFirstStart();
         log.info("Start application instructions completed");
     }
 
@@ -54,7 +54,7 @@ public class StartApplicationInstruction {
 
         File gameFolder = new File(new File("").getAbsolutePath());
         if (gameFolder.getParent() != null) {
-            gameFolder = new File(gameFolder.getParent());
+            gameFolder = new File(gameFolder.getParent()+ "/tes3mp");
         }
         log.info(String.format("Game path: %s", gameFolder.getAbsolutePath()));
         if (fileManager.gameFolderCheck(gameFolder)) {

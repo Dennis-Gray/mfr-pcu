@@ -19,24 +19,24 @@ public class NotificationService {
 
     private final PropertiesConfiguration configuration;
 
-    private final DefaultAbsSender telegramBot;
+//    private final DefaultAbsSender telegramBot;
 
     private ConcurrentLinkedQueue<String> unsentMessages = new ConcurrentLinkedQueue<>();
 
 
     public void sendNotification(String text) {
-        SendMessage message = new SendMessage();
-        message.setChatId(configuration.getChatId());
-        message.setText(text);
-        try {
-            telegramBot.execute(message);
-        } catch (TelegramApiException e) {
-            log.error(e);
-            unsentMessages.offer(text);
-        }
+//        SendMessage message = new SendMessage();
+//        message.setChatId(configuration.getChatId());
+//        message.setText(text);
+//        try {
+//            telegramBot.execute(message);
+//        } catch (TelegramApiException e) {
+//            log.error(e);
+//            unsentMessages.offer(text);
+//        }
     }
 
-    @Scheduled(fixedDelay = 120_000L, initialDelay = 180_000L)
+//    @Scheduled(fixedDelay = 120_000L, initialDelay = 180_000L)
     private void checkUnsentMessages() {
         for (int i = 0; i < unsentMessages.size(); i++) {
             String message = unsentMessages.poll();

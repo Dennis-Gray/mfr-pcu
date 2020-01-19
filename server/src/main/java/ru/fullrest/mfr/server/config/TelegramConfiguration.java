@@ -7,7 +7,7 @@ import org.telegram.telegrambots.bots.DefaultAbsSender;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.meta.ApiContext;
 
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 public class TelegramConfiguration {
 
@@ -18,7 +18,7 @@ public class TelegramConfiguration {
         return new DefaultAbsSender(ApiContext.getInstance(DefaultBotOptions.class)) {
             @Override
             public String getBotToken() {
-                return configuration.getToken();
+                return null; //configuration.getToken();
             }
         };
     }
