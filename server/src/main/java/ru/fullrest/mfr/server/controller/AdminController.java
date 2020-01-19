@@ -255,7 +255,7 @@ public class AdminController {
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
                 ZipEntry zipEntry = entries.nextElement();
-                if (!zipEntry.isDirectory() && zipEntry.getName().toLowerCase().equals("optional/version")) {
+                if (!zipEntry.isDirectory() && zipEntry.getName().toLowerCase().equals("tes3mp/optional/version")) {
                     try (InputStream inputStream = zipFile.getInputStream(zipEntry)) {
                         return new String(inputStream.readAllBytes());
                     }

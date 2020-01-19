@@ -64,7 +64,7 @@ public class MainController implements AbstractController {
         try {
             Runtime.getRuntime().exec(fileManager.getAbsolutePath(propertiesConfiguration.getMorrowind_exe()), null,
                     new File(fileManager.getGamePath(false)));
-            System.exit(0);
+//            System.exit(0);
         } catch (IOException e) {
             createAlertForException(e, "Невозможно запустить Morrowind!");
         }
@@ -74,7 +74,7 @@ public class MainController implements AbstractController {
         try {
             Runtime.getRuntime().exec(fileManager.getAbsolutePath(propertiesConfiguration.getLauncher_exe()), null,
                     new File(fileManager.getGamePath(false)));
-            System.exit(0);
+//            System.exit(0);
         } catch (IOException e) {
             createAlertForException(e, "Невозможно запустить Morrowind Launcher!");
         }
@@ -108,9 +108,7 @@ public class MainController implements AbstractController {
     }
 
     public void openReadme() {
-        readmeView.getController().beforeOpen();
-        stageManager.getApplicationStage().hide();
-        stageManager.getReadmeStage().show();
+        application.getHostServices().showDocument(propertiesConfiguration.getFaqLink());
     }
 
     public void helpForProject() {
@@ -143,6 +141,14 @@ public class MainController implements AbstractController {
         alert.setHeaderText(message);
         alert.setContentText(e.getMessage());
         alert.showAndWait();
+    }
+
+    public void openVKLink() {
+        application.getHostServices().showDocument(propertiesConfiguration.getVkLink());
+    }
+
+    public void openDiscordLink() {
+        application.getHostServices().showDocument(propertiesConfiguration.getDiscordLink());
     }
 
     public void close() {

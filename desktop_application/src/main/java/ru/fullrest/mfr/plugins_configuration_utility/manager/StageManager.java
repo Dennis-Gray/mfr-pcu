@@ -61,7 +61,7 @@ public class StageManager {
 
     public void setApplicationStage(Stage applicationStage) {
         this.applicationStage = applicationStage;
-        initStage(applicationStage, "M[FR] Настройки репака", mainView);
+        initStage(applicationStage, "Morrowind Online", mainView);
     }
 
     public Stage getPluginConfigurationStage() {

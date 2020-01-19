@@ -63,4 +63,13 @@ public class PropertiesConfiguration {
 
     @Value("${update_link}")
     private String updateLink;
+
+    @Value("${faq_link}")
+    private String faqLink;
+
+    @Value("${discord_link}")
+    private String discordLink;
+
+    @Value("${vk_group}")
+    private String vkLink;
 }
